@@ -8,6 +8,14 @@ import java.util.ArrayList;
  * Created by Nek on 2016-12-02.
  */
 public class ConstitutionParser {
+	
+	public void deleteTrash(BufferedReader in){
+		String anotherLine = in.readLine();
+		String trash1 = "2009-11-16", trash2 = "©Kancelaria Sejmu";
+		while (anotherLine.equals(trash1) || anotherLine.equals(trash2) || anotherLine.length()<=1)
+	        anotherLine = in.readLine();
+		
+	}
     public static void parse(String pathToConstText, Constitution constitution) throws FileNotFoundException {
         try {
         BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(pathToConstText),"UTF8"));
