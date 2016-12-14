@@ -21,10 +21,10 @@ public class Constitution {
     }
 
     public String getArticle(int article){
-        return this.articles.get(article).toString();
+        return this.articles.get(article-1).toString();
     }
 
     public String getChapter(int chapter){
-        return this.chapters.get(chapter).chapterHeading + getArticles(this.chapters.get(chapter).articleFirst,this.chapters.get(chapter).articleLast);
+        return this.chapters.get(chapter-1).chapterHeading + getArticles(this.chapters.get(chapter-1).articleFirst,this.chapters.get(chapter-1).articleLast);
     }
 }

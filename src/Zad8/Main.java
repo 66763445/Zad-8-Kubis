@@ -11,8 +11,9 @@ public class Main {
           Constitution constitution = new Constitution();
           ConstitutionParser.parse(args[0], constitution);
 
-          int i = (int) args[1].charAt(0);
-          System.out.print(constitution.getArticle(i));
+          int i = 1;
+          int j = 243;
+          System.out.print(constitution.getArticles(i,j));
        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -11,14 +11,15 @@ public class Article {
     }
 
     public String toString(){
-        StringBuffer buffer = new StringBuffer(this.articleText);
+        StringBuilder buffer = new StringBuilder(this.articleText);
 
         for(int i = 0; i < buffer.length()-3; i++)
             if(buffer.substring(i,i+2).equals("-\n")) {
                 buffer.delete(i,i+2);
-                while(buffer.charAt(i) != ' ')
+                while(buffer.charAt(i) != ' ' && buffer.charAt(i) != '.')
                     i++;
-                buffer.insert(i+1,"\n");
+                if(buffer.charAt(i) != '.')
+                    buffer.insert(i+1,"\n");
             }
         return buffer.toString();
     }
